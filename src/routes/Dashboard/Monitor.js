@@ -13,12 +13,7 @@ const { Secured } = Authorized;
 
 const targetTime = new Date().getTime() + 3900000;
 
-// use permission as a parameter
-const havePermissionAsync = new Promise((resolve) => {
-  // Call resolve on behalf of passed
-  setTimeout(() => resolve(), 1000);
-});
-@Secured(havePermissionAsync)
+@Secured('admin')
 @connect(({ monitor, loading }) => ({
   monitor,
   loading: loading.models.monitor,

@@ -6,9 +6,7 @@ let routerDataCache;
 
 const modelNotExisted = (app, model) => (
   // eslint-disable-next-line
-  !app._models.some(({ namespace }) => {
-    return namespace === model.substring(model.lastIndexOf('/') + 1);
-  })
+  !app._models.some(({ namespace }) => namespace === model)
 );
 
 // wrapper of dynamic
